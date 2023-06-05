@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnEkle").click(function(){
+            var metin = $("#txtIsim").val() + " <br/>";
+            var liste = $("#liste").append(metin);//arkasina eklemeye devam et
+          });
+
+          $("#acKapat").click(function(){
+            $(".genel").toggle("slow");
+          });
+
+          //div rengi degistir
+          $("#btnRenkDegistir").click(function(){
+            $(".genel").css("background-color", "yellow");
+          });
+
+          //buton rengi degistir
+          $("#btnRenkDegistir").click(function(){
+            $(this).css("background-color", "red");
+          });
+        });      
+        </script>
+</head>
+<body>
+    Isim Giriniz :<input type="text" id="txtIsim">
+
+    <input type="button" value="Ekle" id="btnEkle"/>
+    <input type="button" value="Temizle" id="btnTemizle"/>
+    <br>
+    <br>
+    <div id="liste"></div>
+<br>
+    <div class="genel"></div>
+    <br>
+    <input type="button" value="acKapat" id="acKapat"/>
+
+    <br>
+    <br>
+    <input type="button" value="Renk Degistir" id="btnRenkDegistir"/>
+</body>
+</html>
+
